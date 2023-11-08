@@ -10,19 +10,20 @@ require("mason").setup({
 
 require("mason-lspconfig").setup {
     ensure_installed = { 
-      "lua_ls", 
-      "clangd", 
-      "cmake", 
-      "cssls", 
-      "html", 
-      "emmet_ls",
-      "jsonls", 
-      "tsserver",
-      "pyright",
-      "volar",
-      "yamlls",
-      "lemminx",
-      "rust_analyzer",
+        "lua_ls", 
+        "clangd", 
+        "cmake", 
+        "cssls", 
+        "html", 
+        "emmet_ls",
+        "jsonls", 
+        "tsserver",
+        "pyright",
+        "volar",
+        "yamlls",
+        "lemminx",
+        "rust_analyzer",
+        "gopls",
     },
 }
 
@@ -122,4 +123,19 @@ require'lspconfig'.rust_analyzer.setup {
     capabilities = capabilities,
     on_attach = on_attach,
     flags = lsp_flags,
+}
+
+require'lspconfig'.gopls.setup {
+    capabilities = capabilities,
+    on_attach = on_attach,
+    flags = lsp_flags,
+    settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
 }

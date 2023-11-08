@@ -27,6 +27,13 @@ keymap.set("n", "<leader>cl", ":BufferLineCloseLeft<CR>")
 keymap.set("n", "<leader>cr", ":BufferLineCloseRight<CR>")
 keymap.set("n", "<leader>cc", ":BufferLinePickClose<CR>")
 
+keymap.set("i", "<C-F>", "<right>")
+keymap.set("i", "<C-B>", "<left>")
+keymap.set("i", "<C-A>", "<ESC>^i")
+keymap.set("i", "<C-E>", "<ESC>$a")
+keymap.set("i", "<C-D>", "<DELETE>")
+keymap.set("i", "<C-K>", "<ESC>lv$hc")
+
 -- ---------- 插件 ---------- ---
 -- nvim-tree
 -- keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>")
